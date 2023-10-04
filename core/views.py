@@ -1,10 +1,13 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
 from .forms import SignupForm
 
+@login_required
 def index(request):
     return render(request, 'core/index.html')
 
+@login_required
 def score(request):
     return render(request, "core/score.html")
 
